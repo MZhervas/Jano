@@ -1,0 +1,1314 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: #9c4831;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* ============ Section titles (compartidos) ============ */
+
+.section_subtitle {
+    color: white;
+    font-size: 13px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    display: block;
+    margin-bottom: 14px;
+}
+
+.section_subtitle.dark { color: #9c4831; }
+.section_subtitle.white { color: rgba(255, 255, 255, 0.85); }
+
+.section_title {
+    color: white;
+    font-size: 48px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 18px;
+    letter-spacing: 1px;
+    line-height: 1.1;
+}
+
+.section_title.dark { color: #2a2a2a; }
+
+.section_separator {
+    width: 60px;
+    height: 3px;
+    background-color: white;
+    margin: 0 auto;
+}
+
+.section_separator.dark { background-color: #9c4831; }
+
+/* ============ Header ============ */
+
+header {
+    padding: 15px 40px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.15);
+    background-color: rgba(156, 72, 49, 0.96);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    transition: padding 0.3s ease;
+}
+
+header nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1300px;
+    gap: 40px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.logo-link:hover {
+    opacity: 0.85;
+}
+
+.logo-header {
+    height: 44px;
+    width: 44px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.9);
+    background-color: white;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.logo-link:hover .logo-header {
+    transform: rotate(5deg);
+}
+
+.logo-wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.15;
+    color: white;
+}
+
+.logo-wordmark strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+.logo-wordmark small {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3.5px;
+    opacity: 0.85;
+    margin-top: 2px;
+    font-weight: 500;
+}
+
+header nav ul {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: auto;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background-color: white;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+header nav ul li {
+    list-style: none;
+    margin: 0;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all ease 0.3s;
+    font-weight: 600;
+    position: relative;
+    padding: 4px 0;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after,
+header nav ul li .active::after {
+    width: 100%;
+}
+
+header nav ul li a:hover { color: white; }
+header nav ul li .active { color: white; }
+
+/* ============ Hero ============ */
+
+.first-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    min-height: 500px;
+    position: relative;
+    justify-content: center;
+}
+
+.first-section::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background-image: url(./img/WhatsApp\ Image\ 2026-02-12\ at\ 11.44.07\ \(1\).jpeg);
+    background-size: cover;
+    background-position: center;
+    filter: brightness(55%);
+    z-index: 1;
+}
+
+.first-section::after {
+    content: "";
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    background: linear-gradient(180deg, rgba(156, 72, 49, 0.15) 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+}
+
+.contact-jano {
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
+    padding: 0 20px;
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.principal_title_jano{
+    color: white;
+    margin-bottom: 22px;
+    font-size: 78px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    line-height: 1.05;
+}
+
+.title_jano{
+    color: white;
+    margin-bottom: 42px;
+    font-weight: 300;
+    font-size: 22px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+}
+
+.button-contact-jano {
+    position: relative;
+    overflow: hidden;
+    background: none;
+    padding: 16px;
+    border-radius: 50px;
+    border: 2px solid white;
+    width: 300px;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    font-family: "Lato", sans-serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.button-contact-jano::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(156, 72, 49, 0.2));
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    transition: left 0.4s;
+}
+
+.button-contact-jano:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.button-contact-jano:hover::before { left: 100%; }
+
+.whatsapp-button {
+    display: block;
+    color: inherit;
+    text-align: center;
+    z-index: 1;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.button-contact-jano:hover .whatsapp-button {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+/* Scroll indicator */
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    width: 26px;
+    height: 42px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 6px;
+}
+
+.scroll-down-indicator span {
+    display: block;
+    width: 3px;
+    height: 8px;
+    background-color: white;
+    border-radius: 2px;
+    animation: scrollAnim 1.6s infinite;
+}
+
+@keyframes scrollAnim {
+    0% { opacity: 0; transform: translateY(0); }
+    40% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(14px); }
+}
+
+/* ============ Segunda sección ============ */
+
+.second-section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #9c4831;
+    padding: 90px 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-asesoria {
+    text-align: start;
+    max-width: 900px;
+}
+
+.beneficios {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0;
+}
+
+.beneficios li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    font-weight: 400;
+    color: white;
+    line-height: 1.4;
+}
+
+.beneficios li img {
+    margin-right: 15px;
+    flex-shrink: 0;
+    filter: brightness(0) invert(1);
+}
+
+.beneficios li span {
+    font-size: 16px;
+}
+
+.agenda_ahora{
+    font-size: 28px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    color: white;
+    max-width: 800px;
+    line-height: 1.4;
+    font-weight: 300;
+}
+
+/* ============ Proyectos (grilla en desktop) ============ */
+
+.proyectos-jano{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 280px;
+    grid-gap: 20px;
+    padding: 60px 20px 30px;
+}
+
+.imagenes_obras_jano {
+    overflow: hidden;
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.imagenes_obras_jano:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.imagenes_obras_jano img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border: none;
+    transition: transform 0.7s ease;
+}
+
+.imagenes_obras_jano:hover img { transform: scale(1.08); }
+
+.imagenes_obras_jano:nth-child(1){ grid-column-start: span 2; }
+.imagenes_obras_jano:nth-child(4){ grid-column-start: span 2; }
+
+/* Dots del carrusel (solo visibles en mobile) */
+.carousel-dots {
+    display: none;
+    gap: 8px;
+    justify-content: center;
+    padding: 15px 0 30px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.35);
+    transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+    background-color: white;
+    width: 24px;
+    border-radius: 4px;
+}
+
+/* ============ Despedida ============ */
+
+.despedida-jano{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #9c4831;
+    padding: 50px 20px;
+}
+
+.proyectos_unicos{
+    font-size: 42px;
+    margin-bottom: 18px;
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.text_unicos{
+    font-weight: 300;
+    font-size: 20px;
+    color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* ============ Imagen separadora ============ */
+
+.imagen_separadora{
+    height: 500px;
+    overflow: hidden;
+}
+
+.imagen_sepa{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* ============ Cómo trabajamos (Proceso) ============ */
+
+.proceso {
+    background-color: #f5f0ec;
+    padding: 100px 20px;
+    text-align: center;
+}
+
+.proceso_header {
+    margin-bottom: 70px;
+}
+
+.proceso_intro {
+    color: #555;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 22px auto 0;
+    line-height: 1.6;
+    font-weight: 300;
+}
+
+.proceso_grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.proceso_card {
+    background-color: white;
+    padding: 40px 28px;
+    text-align: left;
+    border-radius: 6px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-top: 3px solid #9c4831;
+    position: relative;
+}
+
+.proceso_card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.proceso_num {
+    color: #9c4831;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    margin-bottom: 12px;
+    opacity: 0.6;
+}
+
+.proceso_card_title {
+    font-family: 'Montserrat', sans-serif;
+    color: #2a2a2a;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 14px;
+    letter-spacing: 0.3px;
+}
+
+.proceso_card_text {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.65;
+    font-weight: 400;
+}
+
+.proceso_cta_wrapper {
+    margin-top: 60px;
+}
+
+.proceso_cta {
+    display: inline-block;
+    background-color: #9c4831;
+    color: white;
+    padding: 16px 36px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.proceso_cta:hover {
+    background-color: #7d3826;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(156, 72, 49, 0.3);
+}
+
+/* ============ Sección del Arquitecto ============ */
+
+section.about_me {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 20px;
+    background-color: #ebe3dc;
+    position: relative;
+}
+
+.about_me_header {
+    text-align: center;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.content-container {
+    display: flex;
+    max-width: 1100px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.photo-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    min-height: 500px;
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.content-container:hover .photo-container img {
+    transform: scale(1.04);
+}
+
+.text-container {
+    flex: 1.1;
+    padding: 50px 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.arquitecto_nombre {
+    color: #2a2a2a;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+}
+
+.arquitecto_rol {
+    color: #9c4831;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 28px;
+    text-transform: uppercase;
+}
+
+.arquitecto_bio {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.arquitecto_stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e8e0db;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat_number {
+    color: #9c4831;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.stat_label {
+    color: #777;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.arquitecto_cta {
+    display: inline-block;
+    background-color: #9c4831;
+    color: white;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    align-self: flex-start;
+    margin-top: 10px;
+}
+
+.arquitecto_cta:hover {
+    background-color: #7d3826;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(156, 72, 49, 0.3);
+}
+
+/* ============ Contacto Final ============ */
+
+.contacto-final {
+    background-color: #9c4831;
+    padding: 100px 20px;
+    background-image: linear-gradient(135deg, #9c4831 0%, #7d3826 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto-final::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.06), transparent 70%);
+    pointer-events: none;
+}
+
+.contacto_wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.contacto_left {
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto_title {
+    color: white;
+    font-size: 52px;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 24px;
+    line-height: 1.05;
+    letter-spacing: 0.5px;
+}
+
+.contacto_text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    max-width: 480px;
+}
+
+.contacto_text strong {
+    color: white;
+    font-weight: 600;
+}
+
+.contacto_badges {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.contacto_badge {
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 50px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+.contacto_options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contacto_option {
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 22px 26px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    gap: 20px;
+}
+
+.contacto_option:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateX(6px);
+}
+
+.contacto_option.whatsapp-card {
+    background-color: rgba(37, 211, 102, 0.18);
+    border-color: rgba(37, 211, 102, 0.4);
+}
+
+.contacto_option.whatsapp-card:hover {
+    background-color: rgba(37, 211, 102, 0.28);
+    border-color: rgba(37, 211, 102, 0.7);
+}
+
+.contacto_option_icon {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.contacto_option.whatsapp-card .contacto_option_icon {
+    background-color: rgba(37, 211, 102, 0.9);
+}
+
+.contacto_option_text {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.contacto_option_text strong {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 2px;
+    letter-spacing: 0.3px;
+}
+
+.contacto_option_text span {
+    font-size: 14px;
+    opacity: 0.8;
+    font-weight: 400;
+}
+
+.contacto_option_arrow {
+    font-size: 22px;
+    opacity: 0.6;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.contacto_option:hover .contacto_option_arrow {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+/* ============ Footer ============ */
+
+.fotter {
+    background-color: #5d2a1c;
+    padding: 40px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fotter-div {
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.fotter-div2 {
+    text-align: center;
+}
+
+.arquitecto {
+    font-size: 22px;
+    margin-top: 10px;
+    text-align: justify;
+    color: white;
+    line-height: 1.4;
+}
+
+.arquitecto_contact{
+    text-align: justify;
+    margin-top: 4px;
+    text-decoration: none;
+    color: white;
+    transition: opacity 0.3s ease;
+    font-size: 15px;
+}
+
+.arquitecto_contact:hover { opacity: 0.75; }
+
+.jano_icon {
+    width: 200px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* ============ WhatsApp Float Button ============ */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 18px rgba(37, 211, 102, 0.4);
+    z-index: 98;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #25d366;
+    animation: pulse 2s infinite;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.55);
+}
+
+/* ============ Responsive (mobile) ============ */
+
+@media(max-width:720px){
+
+    /* header */
+    header { padding: 14px 18px; }
+
+    header nav {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .logo-header { height: 38px; width: 38px; }
+
+    .logo-wordmark strong { font-size: 14px; }
+    .logo-wordmark small { font-size: 9px; letter-spacing: 3px; }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    header nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 280px;
+        max-width: 80vw;
+        background-color: #9c4831;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+        margin: 0;
+        padding: 60px 30px;
+        transform: translateX(100%);
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.2);
+    }
+
+    header nav ul.open {
+        transform: translateX(0);
+    }
+
+    header nav ul li a {
+        font-size: 18px;
+        letter-spacing: 0.8px;
+    }
+
+    header nav ul li a::after {
+        bottom: -8px;
+        height: 2px;
+    }
+
+    /* hero */
+    .first-section { height: 95vh; min-height: 480px; }
+
+    .principal_title_jano {
+        color: white;
+        margin-bottom: 20px;
+        font-size: 42px;
+        padding: 0 15px;
+    }
+
+    .title_jano {
+        color: white;
+        margin-bottom: 35px;
+        font-size: 16px;
+        margin-left: 25px;
+        margin-right: 25px;
+    }
+
+    br { display: none; }
+
+    .button-contact-jano {
+        width: 260px;
+        padding: 14px;
+        font-size: 13px;
+    }
+
+    /* section titles */
+    .section_title { font-size: 32px; }
+    .section_subtitle { font-size: 12px; letter-spacing: 3px; }
+
+    /* segunda sección */
+    .second-section { padding: 60px 15px; }
+
+    .beneficios { margin: 30px 0; }
+
+    .beneficios li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 22px;
+        font-size: 15px;
+        font-weight: 400;
+    }
+
+    .beneficios li img { margin-top: 4px; width: 26px; height: 26px; }
+
+    .agenda_ahora {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+    }
+
+    /* CARRUSEL DE PROYECTOS EN MOBILE */
+    .proyectos-jano {
+        display: flex;
+        flex-direction: row;
+        grid-template-columns: none;
+        grid-template-rows: none;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 14px;
+        padding: 30px 20px 10px;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        scroll-padding: 20px;
+    }
+
+    .proyectos-jano::-webkit-scrollbar { display: none; }
+
+    .imagenes_obras_jano {
+        flex: 0 0 88%;
+        scroll-snap-align: center;
+        height: 320px;
+        margin: 0;
+    }
+
+    .imagenes_obras_jano:nth-child(1),
+    .imagenes_obras_jano:nth-child(4) {
+        grid-column-start: auto;
+    }
+
+    .carousel-dots { display: flex; }
+
+    /* proyectos únicos */
+    .proyectos_unicos { font-size: 28px; }
+
+    .text_unicos {
+        font-weight: 400;
+        font-size: 15px;
+        padding: 0 20px;
+    }
+
+    /* imagen separadora */
+    .imagen_separadora { height: 280px; }
+
+    .imagen_sepa {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    /* proceso */
+    .proceso { padding: 70px 15px; }
+
+    .proceso_header { margin-bottom: 45px; }
+
+    .proceso_intro { font-size: 16px; padding: 0 10px; }
+
+    .proceso_grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .proceso_card {
+        padding: 30px 24px;
+    }
+
+    .proceso_num { font-size: 32px; }
+
+    .proceso_card_title { font-size: 18px; }
+
+    .proceso_card_text { font-size: 14px; }
+
+    .proceso_cta_wrapper { margin-top: 40px; }
+
+    /* about me - arquitecto */
+    section.about_me { padding: 70px 15px; }
+
+    .about_me_header { margin-bottom: 40px; }
+
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .photo-container {
+        flex: none;
+        min-height: 320px;
+        max-height: 380px;
+    }
+
+    .photo-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .text-container {
+        flex: 1;
+        padding: 35px 25px;
+    }
+
+    .arquitecto_nombre { font-size: 26px; }
+
+    .arquitecto_rol {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .arquitecto_bio { font-size: 15px; }
+
+    .arquitecto_stats {
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    .stat {
+        flex: 1;
+        min-width: 80px;
+    }
+
+    .stat_number { font-size: 26px; }
+    .stat_label { font-size: 10px; }
+
+    .arquitecto_cta {
+        align-self: stretch;
+        text-align: center;
+    }
+
+    /* contacto final */
+    .contacto-final { padding: 70px 15px; }
+
+    .contacto_wrapper {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contacto_title { font-size: 34px; }
+
+    .contacto_title br { display: none; }
+
+    .contacto_text { font-size: 16px; }
+
+    .contacto_option { padding: 18px 20px; gap: 14px; }
+
+    .contacto_option_icon { width: 44px; height: 44px; }
+
+    .contacto_option_icon svg { width: 24px; height: 24px; }
+
+    .contacto_option_text strong { font-size: 16px; }
+
+    .contacto_option_text span { font-size: 13px; }
+
+    /* footer */
+    .fotter {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 35px 20px;
+    }
+
+    .fotter-div,
+    .fotter-div2 {
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 0px;
+        align-items: center;
+    }
+
+    .br_jano { display: block; }
+
+    .arquitecto {
+        font-size: 22px;
+        margin-top: 10px;
+        text-align: center;
+        color: white;
+    }
+
+    .arquitecto_contact{
+        text-align: center;
+        margin-top: 5px;
+        color: white;
+    }
+
+    .jano_icon { width: 180px; height: 100px; }
+
+    /* whatsapp float mobile */
+    .whatsapp-float {
+        width: 52px;
+        height: 52px;
+        bottom: 18px;
+        right: 18px;
+    }
+
+    .whatsapp-float svg { width: 28px; height: 28px; }
+}
+
+@media(max-width:480px){
+    .principal_title_jano { font-size: 36px; }
+
+    .section_title { font-size: 28px; }
+
+    .contacto_title { font-size: 30px; }
+
+    .text-container { padding: 30px 20px; }
+}
+
+/* Tablet medio */
+@media(min-width:721px) and (max-width:1024px){
+    .proceso_grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contacto_wrapper {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .principal_title_jano { font-size: 60px; }
+}
