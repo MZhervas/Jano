@@ -512,7 +512,7 @@ header nav ul li .active { color: white; }
 /* ============ Cómo trabajamos (Proceso) ============ */
 
 .proceso {
-    background-color: #f5f0ec;
+    background-color: rgb(225 225 225);
     padding: 100px 20px;
     text-align: center;
 }
